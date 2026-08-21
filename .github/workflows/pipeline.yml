@@ -22,3 +22,18 @@ jobs:
  
       - name: Ejecutar tests
         run: npm test
+  cd:
+    name: Deploy (CD)
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+ 
+      - name: Publicar en GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .   
