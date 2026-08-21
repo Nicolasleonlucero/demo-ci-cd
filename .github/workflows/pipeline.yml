@@ -26,6 +26,8 @@ jobs:
     name: Deploy (CD)
     needs: ci
     runs-on: ubuntu-latest
+    #permissions:
+      #contents:write
     permissions:
       contents: write
     steps:
