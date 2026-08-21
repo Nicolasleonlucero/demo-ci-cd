@@ -27,9 +27,7 @@ jobs:
     needs: ci
     runs-on: ubuntu-latest
     #permissions:
-      #contents:write
-    permissions:
-      contents: write
+      #contents: write
     steps:
       - name: Descargar código
         uses: actions/checkout@v4
